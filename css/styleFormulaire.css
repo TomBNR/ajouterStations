@@ -19,10 +19,6 @@ and open the template in the editor.
     background-color: khaki;
 }
 
-#IdSigfox{
-    margin-left: 40px
-}
-
 #Sigfox{
     margin-left: 52px
 }
@@ -37,4 +33,8 @@ and open the template in the editor.
 
 #Latitude{
     margin-left: 42px
+}
+
+#envoyer{
+    margin-left: 150px;
 }

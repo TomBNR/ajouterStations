@@ -20,7 +20,7 @@ function connexionBdd() {
     }
 }
 
-function AjoutStations() {
+function ajoutStationsBdd($IdStation, $Sigfox, $Nom, $Longitude, $Latitude) {
     try {
         // connexion BDD
         $bdd = connexionBdd();
