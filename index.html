@@ -4,7 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<!DOCTYPE html>
+
 <html>
     <head>
         <title>ajouter des stations</title>
@@ -14,14 +14,15 @@ and open the template in the editor.
         <link href="css/styleFormulaire.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-        <form action="envoieOk.html" method="get">
+        <form action="envoiOk.php" method="get">
+            <a href="php/fonctions.inc.php"></a>
         <fieldset id="page">
             <fieldset id="formulaire">
                 <legend>Ajout de stations</legend><br/>
-                <label>Sigfox <input type="text" name="Sigfox" id="Sigfox"/></label><br/><br/>
-                <label>Nom <input type="text" name="Nom" id="Nom"/></label><br/><br/>
-                <label>Lontitude <input type="text" name="Longitude" id="Longitude"/></label><br/><br/>
-                <label>Latitude <input type="text" name="Latitude" id="Latitude"/></label><br/><br/>
+                <label>Sigfox <input type="text" name="sigfox" id="sigfox"/></label><br/><br/>
+                <label>Nom <input type="text" name="nom" id="nom"/></label><br/><br/>
+                <label>Lontitude <input type="text" name="longitude" id="longitude"/></label><br/><br/>
+                <label>Latitude <input type="text" name="latitude" id="latitude"/></label><br/><br/>
                 <input type="submit" id="envoyer"/>
             </fieldset>
         </fieldset>

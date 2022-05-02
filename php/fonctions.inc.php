@@ -1,9 +1,6 @@
 <?php
 
-define("SERVEURBDD", "172.18.58.86");
-define("LOGIN", "root");
-define("MOTDEPASSE", "toto");
-define("NOMDELABASE", "mesure_piezometrique");
+require_once 'config.inc.php';
 
 function connexionBdd() {
     try {
@@ -11,7 +8,7 @@ function connexionBdd() {
         $pdOptions = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION);
         $bdd = new PDO('mysql:host=' . SERVEURBDD . ';dbname=' . NOMDELABASE, LOGIN, MOTDEPASSE, $pdOptions);
         $bdd->exec('set names utf8');
-        echo "Connexion > OK !";
+        echo "Station ajoutée !";
         return $bdd;
         //si erreur on tue le processus et on affiche le message d'erreur    
     } catch (PDOException $e) {
@@ -20,13 +17,12 @@ function connexionBdd() {
     }
 }
 
-function ajoutStationsBdd($IdStation, $Sigfox, $Nom, $Longitude, $Latitude) {
+function ajoutStationsBdd($Sigfox, $Nom, $Longitude, $Latitude) {
     try {
         // connexion BDD
         $bdd = connexionBdd();
         // execution de la requete
-        $requete = $bdd->prepare("INSERT INTO Station (IdStation, Sigfox, Nom, Longitude, Latitude) VALUES (:IdStation,:Sigfox,:Nom,:Longitude,:Latitude)") ;
-        $requete->bindParam(":IdStation", $IdStation);
+        $requete = $bdd->prepare("INSERT INTO Station (Sigfox, Nom, Longitude, Latitude) VALUES (:Sigfox,:Nom,:Longitude,:Latitude)") ;
         $requete->bindParam(":Sigfox", $Sigfox);
         $requete->bindParam(":Nom", $Nom);
         $requete->bindParam(":Longitude", $Longitude);
